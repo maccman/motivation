@@ -12,7 +12,7 @@ var App = function($el){
   );
 
   if (this.dob) {
-    this.renderAgeLoop()
+    this.renderAgeLoop();
   } else {
     this.renderChoose();
   }
