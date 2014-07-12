@@ -1,0 +1,20 @@
+{
+   "background": {
+      "persistent": false,
+      "scripts": [ "motivation.js" ]
+   },
+   "chrome_url_overrides": {
+      "newtab": "dashboard.html"
+   },
+   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+   "description": "Replace new tab page with Motivation",
+   "icons": {
+      "128": "icon-128.png",
+      "16": "icon-16.png",
+      "48": "icon-48.png"
+   },
+   "manifest_version": 2,
+   "name": "Motivation",
+   "offline_enabled": true,
+   "version": "0.1"
+}

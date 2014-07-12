@@ -1,0 +1,111 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body {
+  background: #fff;
+  color: #231f20;
+  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: #1d242e;
+  font-family: 'Lucida Grande', verdana, sans-serif;
+  color: #333;
+  font: 13px/18px "Lucida Grande",verdana,sans-serif;
+
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-justify-content: center;
+  text-align: center;
+}
+
+h1 {
+  color: #788b94;
+  font: 500 60px/1.4 "DINWeb","Lucida Grande",verdana,sans-serif;
+  margin: 0 0 0 0;
+  -webkit-font-smoothing: antialiased;
+  text-transform: uppercase;
+}
+
+h2.count {
+  color: #c3d7ef;
+  display: block;
+  font: 500 120px/1.4 "DINWeb","Lucida Grande",verdana,sans-serif;
+  letter-spacing: -0.05em;
+  margin: 0 0 8px 0;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+h2.count span {
+  display: inline-block;
+  font-size: 35%;
+  letter-spacing: 0;
+  line-height: 1.7;
+  opacity: 0.7;
+  margin: 50px 0 0 0.5em;
+  opacity: 0.92;
+  vertical-align: top;
+}
+
+label {
+  color: #FFF;
+  font: 500 60px/1.4 "DINWeb","Lucida Grande",verdana,sans-serif;
+  margin: 0 0 0 0;
+  -webkit-font-smoothing: antialiased;
+  display: block;
+}
+
+input {
+  font: 400 13px/1.2 "Lucida Grande",verdana,sans-serif;
+
+  background: rgba(255,255,255,0.65);
+  background: -webkit-linear-gradient(top, #e1e1e1, #fff);
+
+  border: 0 none;
+  border-radius: 4px 4px;
+  box-sizing: border-box;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+  color: #000;
+  outline: 0 none;
+  padding: 24px 26px;
+  -webkit-font-smoothing: antialiased;
+
+  display: block;
+}
+
+button {
+  border: none;
+  background: #14BFFF;
+  font-size: 35px;
+  padding: 13px 30px;
+  border-radius: 4px;
+  margin: 0 0 0 15px;
+  font-family: "Lucida Grande",verdana,sans-serif;
+  color: #FFF;
+  display: block;
+  cursor: pointer;
+  outline: none;
+}
+
+footer {
+  margin: 30px 0 0 0;
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: center;
+}

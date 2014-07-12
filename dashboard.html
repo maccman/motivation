@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>New Tab</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="app"></div>
+
+<script id="dob-template" type="text/x-handlebars-template">
+  <form>
+    <label id="dob">What's your DOB?</label>
+
+    <footer>
+      <input type="date" name="dob" id="dob">
+      <button type="submit">Start</button>
+    </footer>
+  <form>
+</script>
+
+<script id="age-template" type="text/x-handlebars-template">
+  <h1>Age</h1>
+  <h2 class="count">{{year}}<span>.{{milliseconds}}</h2>
+</script>
+
+<script src="js/handlebars.js"></script>
+<script src="js/moment.js"></script>
+<script src="js/underscore.js"></script>
+<script src="app/app.js"></script>
+
+</body>
+</html>
