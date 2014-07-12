@@ -12,7 +12,7 @@ var App = function($el){
   );
 
   if (this.dob) {
-    this.renderAgeLoop();
+    this.renderAge();
   } else {
     this.renderChoose();
   }
@@ -36,9 +36,9 @@ App.fn.submit = function(e){
   e.preventDefault();
 
   var input = this.$$('input')[0];
-  if ( !input.valueAsDate ) return;
+  if ( !input.value ) return;
 
-  this.dob  = moment(input.valueAsDate);
+  this.dob = moment(input.value, 'YYYY-MM-DD');
   this.save();
   this.renderAgeLoop();
 };
@@ -57,7 +57,7 @@ App.fn.renderAge = function(){
 
   var previousBday = moment({
     month: this.dob.month(),
-    day:   this.dob.day(),
+    day:   this.dob.date(),
     year:  now.year() - 1
   });
 
