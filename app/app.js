@@ -12,7 +12,7 @@ var App = function($el){
   );
 
   if (this.dob) {
-    this.renderAge();
+    this.renderAgeLoop();
   } else {
     this.renderChoose();
   }
@@ -24,21 +24,21 @@ App.fn.load = function(){
   var value;
 
   if (value = localStorage.dob)
-    this.dob = moment.unix(value);
+    this.dob = new Date(parseInt(value));
 };
 
 App.fn.save = function(){
   if (this.dob)
-    localStorage.dob = this.dob.unix();
+    localStorage.dob = this.dob.getTime();
 };
 
 App.fn.submit = function(e){
   e.preventDefault();
 
   var input = this.$$('input')[0];
-  if ( !input.value ) return;
+  if ( !input.valueAsDate ) return;
 
-  this.dob = moment(input.value, 'YYYY-MM-DD');
+  this.dob = input.valueAsDate;
   this.save();
   this.renderAgeLoop();
 };
@@ -52,21 +52,16 @@ App.fn.renderAgeLoop = function(){
 };
 
 App.fn.renderAge = function(){
-  var now       = moment();
-  var duration  = moment.duration(now.diff(this.dob));
+  var now       = new Date
+  var duration  = now - this.dob;
+  var years     = duration / 31556900000;
 
-  var previousBday = moment({
-    month: this.dob.month(),
-    day:   this.dob.date(),
-    year:  now.year() - 1
-  });
-
-  var previousBdayDuration = moment.duration(now.diff(previousBday));
+  var majorMinor = years.toFixed(9).toString().split('.');
 
   requestAnimationFrame(function(){
     this.html(this.view('age')({
-      year:         duration.years(),
-      milliseconds: previousBdayDuration.asMilliseconds()
+      year:         majorMinor[0],
+      milliseconds: majorMinor[1]
     }));
   }.bind(this));
 };
