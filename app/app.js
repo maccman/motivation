@@ -54,19 +54,32 @@ App.fn.renderAgeLoop = function(){
 App.fn.renderAge = function(){
   var now       = moment();
   var duration  = moment.duration(now.diff(this.dob));
+  var lastBdayYear = now.year();
+
+  if (this.dob.month() < now.month()) {
+    lastBdayYear--;
+  }
+  else if (this.dob.month() === now.month()) {
+    if (this.dob.date() > now.date()) {
+      lastBdayYear--;
+    }
+  }
 
   var previousBday = moment({
     month: this.dob.month(),
     day:   this.dob.date(),
-    year:  now.year() - 1
+    year:  lastBdayYear
   });
 
   var previousBdayDuration = moment.duration(now.diff(previousBday));
 
+  var yearLeftPercentage = (previousBdayDuration.asMilliseconds() / 31557600000).toString();
+  yearLeftPercentage = yearLeftPercentage.substring(2, yearLeftPercentage.length);
+
   requestAnimationFrame(function(){
     this.html(this.view('age')({
       year:         duration.years(),
-      milliseconds: previousBdayDuration.asMilliseconds()
+      milliseconds: yearLeftPercentage
     }));
   }.bind(this));
 };
