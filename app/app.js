@@ -24,7 +24,7 @@ App.fn.load = function(){
   var value;
 
   if (value = localStorage.dob)
-    this.dob = new Date(parseInt(value)*1000);
+    this.dob = new Date(parseInt(value));
 };
 
 App.fn.save = function(){
