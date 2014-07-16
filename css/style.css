@@ -13,19 +13,14 @@ html {
   padding: 0;
   height: 100%;
 }
+
 body {
   background: #fff;
   color: #231f20;
+
   font-family: 'helvetica neue', helvetica, arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  background: #1d242e;
-  font-family: 'Lucida Grande', verdana, sans-serif;
-  color: #333;
-  font: 13px/18px "Lucida Grande",verdana,sans-serif;
 
   display: -webkit-flex;
   -webkit-flex-direction: column;
@@ -35,17 +30,17 @@ body {
 }
 
 h1 {
-  color: #788b94;
-  font: 500 60px/1.4 "DINWeb","Lucida Grande",verdana,sans-serif;
+  color: #7d7d7d;
+  font: 500 60px/1.4 "Lucida Grande",verdana,sans-serif;
   margin: 0 0 0 0;
   -webkit-font-smoothing: antialiased;
   text-transform: uppercase;
 }
 
 h2.count {
-  color: #c3d7ef;
+  color: #494949;
   display: block;
-  font: 500 120px/1.4 "DINWeb","Lucida Grande",verdana,sans-serif;
+  font: 500 120px/1.4 "Lucida Grande",verdana,sans-serif;
   letter-spacing: -0.05em;
   margin: 0 0 8px 0;
   position: relative;
@@ -65,7 +60,7 @@ h2.count span {
 
 label {
   color: #FFF;
-  font: 500 60px/1.4 "DINWeb","Lucida Grande",verdana,sans-serif;
+  font: 500 60px/1.4 "Lucida Grande",verdana,sans-serif;
   margin: 0 0 0 0;
   -webkit-font-smoothing: antialiased;
   display: block;
