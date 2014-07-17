@@ -7,6 +7,7 @@
   -o-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 body,
 html {
   margin: 0;
@@ -15,90 +16,69 @@ html {
 }
 
 body {
-  background: #fff;
-  color: #231f20;
-
-  font-family: 'helvetica neue', helvetica, arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  display: -webkit-flex;
-  -webkit-flex-direction: column;
   -webkit-align-items: center;
+  -webkit-flex-direction: column;
+  -webkit-font-smoothing: antialiased;
   -webkit-justify-content: center;
-  text-align: center;
 }
 
-h1 {
-  color: #7d7d7d;
-  font: 500 60px/1.4 "Lucida Grande",verdana,sans-serif;
-  margin: 0 0 0 0;
-  -webkit-font-smoothing: antialiased;
-  text-transform: uppercase;
+body, input {
+  display: -webkit-flex;
+  font-family: 'Avenir', 'helvetica neue', helvetica, arial, sans-serif;
 }
 
-h2.count {
-  color: #494949;
-  display: block;
-  font: 500 120px/1.4 "Lucida Grande",verdana,sans-serif;
-  letter-spacing: -0.05em;
-  margin: 0 0 8px 0;
-  position: relative;
-  -webkit-font-smoothing: antialiased;
+.age-label {
+  color: #B0B5B9;
+  font-size: 1.2rem;
+  line-height: 1;
+  margin: 0;
 }
 
-h2.count span {
-  display: inline-block;
-  font-size: 35%;
-  letter-spacing: 0;
-  line-height: 1.7;
-  opacity: 0.7;
-  margin: 50px 0 0 0.5em;
-  opacity: 0.92;
-  vertical-align: top;
+.count {
+  color: #5A646D;
+  margin: 0;
+  font-size: 6rem;
+  line-height: 1;
+}
+
+.count sup {
+  font-size: 1.2rem;
 }
 
 label {
-  color: #494949;
-  font: 500 60px/1.4 "Lucida Grande",verdana,sans-serif;
-  margin: 0 0 0 0;
-  -webkit-font-smoothing: antialiased;
   display: block;
+}
+
+input, button {
+  padding: 0.375rem 0.75rem;
+  font-size: 1.5rem;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 input {
-  font: 400 13px/1.2 "Lucida Grande",verdana,sans-serif;
-
-  background: rgba(255,255,255,0.65);
-
-  border: 0 none;
-  border-radius: 4px 4px;
+  margin-right: 0.5rem;
   box-sizing: border-box;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
-  color: #000;
-  outline: 0 none;
-  padding: 24px 26px;
-  -webkit-font-smoothing: antialiased;
-
-  display: block;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0.25rem;
+  border-color: #CCC;
+  background-color: #FFF;
 }
 
 button {
-  border: none;
-  background: #494949;
-  font-size: 35px;
-  padding: 13px 30px;
-  border-radius: 4px;
-  margin: 0 0 0 20px;
-  font-family: "Lucida Grande",verdana,sans-serif;
-  color: #FFF;
+  outline: none;
   display: block;
   cursor: pointer;
-  outline: none;
+  color: #FFF;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #0BE;
 }
 
 footer {
-  margin: 30px 0 0 0;
+  padding-top: 0.5rem;
   display: -webkit-flex;
   -webkit-flex-direction: row;
   -webkit-justify-content: center;
