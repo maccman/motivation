@@ -21,15 +21,19 @@ var App = function($el){
 App.fn = App.prototype;
 
 App.fn.load = function(){
-  var value;
-
-  if (value = localStorage.dob)
-    this.dob = new Date(parseInt(value));
+  var val = localStorage.dob;
+  if (val != 'null'){
+    this.dob = new Date(parseInt(val));
+  }
 };
 
 App.fn.save = function(){
   if (this.dob)
     localStorage.dob = this.dob.getTime();
+  if(this.textColor)
+    localStorage.textColor = this.textColor;
+  if(this.backgroundColor)
+    localStorage.backgroundColor = this.backgroundColor;
 };
 
 App.fn.submit = function(e){
@@ -39,8 +43,15 @@ App.fn.submit = function(e){
   if ( !input.valueAsDate ) return;
 
   this.dob = input.valueAsDate;
+  this.backgroundColor = $('backgroundPicker').value;
+  this.textColor = $('textPicker').value;
   this.save();
+
+  document.body.style.backgroundColor = this.backgroundColor;
+  document.body.style.color = this.textColor;
+
   this.renderAgeLoop();
+  location.reload();
 };
 
 App.fn.renderChoose = function(){
@@ -49,6 +60,8 @@ App.fn.renderChoose = function(){
 
 App.fn.renderAgeLoop = function(){
   this.interval = setInterval(this.renderAge.bind(this), 100);
+  document.body.style.backgroundColor = localStorage.backgroundColor;
+  document.body.style.color = localStorage.textColor;
 };
 
 App.fn.renderAge = function(){
@@ -63,6 +76,16 @@ App.fn.renderAge = function(){
       year:         majorMinor[0],
       milliseconds: majorMinor[1]
     }));
+    document.getElementById('reset').onclick = function(){
+      this.dob = null;
+      this.textColor = null;
+      this.backgroundColor = null;
+      localStorage.backgroundColor = null;
+      localStorage.textColor = null;
+      localStorage.dob = null;
+      location.reload();
+    };
+    document.getElementById('reset').style.opacity = '1';
   }.bind(this));
 };
 
