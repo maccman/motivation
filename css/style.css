@@ -18,7 +18,6 @@ html {
 body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-align-items: center;
-  -webkit-flex-direction: column;
   -webkit-font-smoothing: antialiased;
   -webkit-justify-content: center;
 }
@@ -32,11 +31,11 @@ body, input {
   color: #B0B5B9;
   font-size: 1.2rem;
   line-height: 1;
-  margin: 0 0 0 2px;
+  margin: 0 0 1 2px;
+  text-align: center;
 }
 
 .count {
-  color: #494949;
   margin: 0;
   font-size: 6rem;
   line-height: 1;
@@ -53,22 +52,27 @@ label {
 }
 
 input, button {
-  padding: 0.375rem 0.75rem;
+  /*padding: 0.375rem 0.75rem;*/
   font-size: 1.5rem;
   appearance: none;
   -webkit-appearance: none;
 }
 
 input {
-  margin-right: 0.5rem;
+  /*margin-right: 0.5rem;*/
   box-sizing: border-box;
   border-width: 1px;
   border-style: solid;
   border-radius: 0.25rem;
   border-color: #CCC;
   background-color: #FFF;
+  margin-bottom: 10%;
 }
-
+input[type='color']{
+  width:100%;
+  height:50px;
+  border-width: 0px;
+}
 button {
   outline: none;
   display: block;
@@ -81,7 +85,16 @@ button {
 
 footer {
   padding-top: 0.5rem;
-  display: -webkit-flex;
-  -webkit-flex-direction: row;
-  -webkit-justify-content: center;
+}
+
+#reset{
+  position: fixed !important;
+  bottom: 0;
+  font-size: 12px;
+  color: black;
+  cursor: pointer;
+  opacity:  0;
+}
+#reset:hover{
+  text-decoration: underline;
 }
