@@ -91,7 +91,6 @@ footer {
   position: fixed !important;
   bottom: 0;
   font-size: 12px;
-  color: black;
   cursor: pointer;
   opacity:  0;
 }
