@@ -52,9 +52,9 @@ App.fn.renderAgeLoop = function(){
 };
 
 App.fn.renderAge = function(){
-  var now       = new Date
-  var duration  = now - this.dob;
-  var years     = duration / 31556900000;
+  var now       = new Date;
+  var duration  = now-this.dob;
+  var years     = duration / 31556463000;
 
   var majorMinor = years.toFixed(9).toString().split('.');
 
