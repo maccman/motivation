@@ -46,6 +46,9 @@ body, input {
 .count sup {
   font-size: 2.4rem;
   margin-left: 7px;
+  /* styles below to prevent wiggling by decimal */
+  display: inline-block;
+  width: 210px;
 }
 
 label {
