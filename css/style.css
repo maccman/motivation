@@ -22,7 +22,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -webkit-justify-content: center;
   background-color: black;
-  color: white;
 }
 
 body, input {
@@ -31,14 +30,16 @@ body, input {
 }
 
 .age-label {
-  color: #B0B5B9;
+  text-shadow: 2px 2px #111111;
+  color: #004D40;
   font-size: 1.2rem;
   line-height: 1;
   margin: 0 0 0 2px;
 }
 
 .count {
-  color: #494949;
+  text-shadow: 1.25px 1.25px #111111;
+  color: #1A237E;
   margin: 0;
   font-size: 6rem;
   line-height: 1;
