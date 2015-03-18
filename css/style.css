@@ -48,8 +48,17 @@ body, input {
   margin-left: 7px;
 }
 
+.show-age {
+  float: left;
+  margin: 4px 10px 0 0;
+  appearance: checkbox;
+  -webkit-appearance: checkbox;
+}
+
 label {
   display: block;
+  margin-top: 20px;
+  color: #989C9F;
 }
 
 input, button {

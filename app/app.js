@@ -19,26 +19,30 @@ var App = function($el){
 };
 
 App.fn = App.prototype;
-
 App.fn.load = function(){
   var value;
 
   if (value = localStorage.dob)
-    this.dob = new Date(parseInt(value));
+    this.dob     = new Date(parseInt(value));
+    this.showAge = localStorage.showAge;
 };
 
 App.fn.save = function(){
   if (this.dob)
-    localStorage.dob = this.dob.getTime();
+    localStorage.dob     = this.dob.getTime();
+    localStorage.showAge = this.showAge;
 };
 
 App.fn.submit = function(e){
   e.preventDefault();
 
-  var input = this.$$('input')[0];
+  var input    = this.$$('input')[0];
+  var checkbox = this.$$('input')[1];
   if ( !input.valueAsDate ) return;
 
-  this.dob = input.valueAsDate;
+  this.dob     = input.valueAsDate;
+  this.showAge = checkbox.checked;
+
   this.save();
   this.renderAgeLoop();
 };
@@ -48,11 +52,17 @@ App.fn.renderChoose = function(){
 };
 
 App.fn.renderAgeLoop = function(){
+  if (this.showAge === 'true' || this.showAge === true)
+    this.age = "AGE";
+
+  this.html(this.view('age')({
+    showAge: this.age
+  }));
   this.interval = setInterval(this.renderAge.bind(this), 100);
 };
 
 App.fn.renderAge = function(){
-  var now       = new Date
+  var now       = new Date;
   var duration  = now - this.dob;
   var years     = duration / 31556900000;
 
@@ -61,7 +71,8 @@ App.fn.renderAge = function(){
   requestAnimationFrame(function(){
     this.html(this.view('age')({
       year:         majorMinor[0],
-      milliseconds: majorMinor[1]
+      milliseconds: majorMinor[1],
+      showAge:      this.age
     }));
   }.bind(this));
 };
