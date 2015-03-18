@@ -55,9 +55,6 @@ App.fn.renderAgeLoop = function(){
   if (this.showAge === 'true' || this.showAge === true)
     this.age = "AGE";
 
-  this.html(this.view('age')({
-    showAge: this.age
-  }));
   this.interval = setInterval(this.renderAge.bind(this), 100);
 };
 
