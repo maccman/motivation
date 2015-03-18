@@ -50,7 +50,7 @@ body, input {
 
 .show-age {
   float: left;
-  margin: 4px 10px 0 0;
+  margin: 0 10px 0 0;
   appearance: checkbox;
   -webkit-appearance: checkbox;
 }
