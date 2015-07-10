@@ -12,23 +12,13 @@
 
 <div id="app"></div>
 
-<script id="dob-template" type="text/x-handlebars-template">
-  <form>
-    <h1 id="dob" class="age-label">When were you born?</h1>
-
-    <footer>
-      <input type="date" name="dob" id="dob">
-      <button type="submit">Motivate</button>
-    </footer>
-  <form>
-</script>
-
 <script id="age-template" type="text/x-handlebars-template">
   <h1 class="age-label">Time left today</h1>
-  <h2 class="count">{{year}}<sup>.{{milliseconds}}</sup></h2>
+  <h2 class="count"><sup>{{timeLeft}}</sup></h2>
 </script>
 
 <script src="js/handlebars.js"></script>
+<script src="js/countdown.min.js"></script>
 <script src="app/app.js"></script>
 
 </body>

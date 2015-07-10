@@ -6,64 +6,25 @@ var $$ = document.querySelectorAll.bind(document);
 var App = function($el){
   this.$el = $el;
   this.load();
-
-  this.$el.addEventListener(
-    'submit', this.submit.bind(this)
-  );
-
-  if (this.dob) {
-    this.renderAgeLoop();
-  } else {
-    this.renderChoose();
-  }
 };
 
 App.fn = App.prototype;
 
 App.fn.load = function(){
-  var val = localStorage.dob;
-
-  if (val)
-    this.dob = new Date(parseInt(val));
-};
-
-App.fn.save = function(){
-  if (this.dob)
-    localStorage.dob = this.dob.getTime();
-};
-
-App.fn.submit = function(e){
-  e.preventDefault();
-
-  var input = this.$$('input')[0];
-  if ( !input.valueAsDate ) return;
-
-  this.dob = input.valueAsDate;
-  this.save();
   this.renderAgeLoop();
-};
-
-App.fn.renderChoose = function(){
-  this.html(this.view('dob')());
 };
 
 App.fn.renderAgeLoop = function(){
   this.interval = setInterval(this.renderAge.bind(this), 100);
 };
 
-App.fn.renderAge = function(){
-  var now       = new Date;
-  var die_date = new Date(now.getFullYear(), now.getUTCMonth(), now.getDate() + 1);
-
-  var duration  = die_date - now;
-  var years     = duration / 31556900000;
-
-  var majorMinor = years.toFixed(9).toString().split('.');
+App.fn.renderAge = function(timeLeft){
+  var now = new Date(Date.now());
+  var timeLeft = countdown( new Date(now.getFullYear(), now.getMonth(), now.getDay()+6) ).toString();
 
   requestAnimationFrame(function(){
     this.html(this.view('age')({
-      year:         majorMinor[0],
-      milliseconds: majorMinor[1]
+      timeLeft: timeLeft,
     }));
   }.bind(this));
 };
