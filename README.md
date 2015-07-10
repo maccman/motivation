@@ -1,7 +1,8 @@
 Daily Motivation
 ========
 
-This was originally forked from maccman's motivation extension, which is very similar to this app. However, it stopped giving me that daily motivation boost after a couple weeks. This fork counts down to tomorrow to keep you motivated throughout your day, every day.
+This was originally forked from [maccman's Motivation](https://github.com/maccman/motivation) which displayed your age as time went on. However, it stopped giving me a motivation boost after a couple weeks, so I made this extension. It counts down the hours, minutes, and seconds left today to keep you motivated throughout your day.
 
+It feels like you're always competing on the clock to get your tasks done!
 
 ![](screenshot.png)
