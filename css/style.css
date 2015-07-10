@@ -33,20 +33,15 @@ body, input {
   color: #C5CAE9;
   font-size: 1.2rem;
   line-height: 1;
-  margin: 0 0 1 2px;
+  margin: 0 0 20 0px;
 }
 
 .count {
   color: #C5CAE9;
   margin: 0;
-  font-size: 6rem;
+  font-size: 2.4rem;
   line-height: 1;
   font-weight: 600;
-}
-
-.count sup {
-  font-size: 2.4rem;
-  margin-left: 7px;
 }
 
 label {
