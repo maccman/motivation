@@ -13,6 +13,7 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
+  background-color: #000226;
 }
 
 body {
@@ -29,14 +30,14 @@ body, input {
 }
 
 .age-label {
-  color: #B0B5B9;
+  color: #C5CAE9;
   font-size: 1.2rem;
   line-height: 1;
-  margin: 0 0 0 2px;
+  margin: 0 0 1 2px;
 }
 
 .count {
-  color: #494949;
+  color: #C5CAE9;
   margin: 0;
   font-size: 6rem;
   line-height: 1;
@@ -46,6 +47,8 @@ body, input {
 .count sup {
   font-size: 2.4rem;
   margin-left: 7px;
+  display: inline-block;
+  width: 210px;
 }
 
 label {

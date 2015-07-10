@@ -21,10 +21,10 @@ var App = function($el){
 App.fn = App.prototype;
 
 App.fn.load = function(){
-  var value;
+  var val = localStorage.dob;
 
-  if (value = localStorage.dob)
-    this.dob = new Date(parseInt(value));
+  if (val)
+    this.dob = new Date(parseInt(val));
 };
 
 App.fn.save = function(){
@@ -53,8 +53,10 @@ App.fn.renderAgeLoop = function(){
 
 App.fn.renderAge = function(){
   var now       = new Date;
-  var duration  = now-this.dob;
-  var years     = duration / 31556463000;
+  var die_date = new Date(now.getFullYear(), now.getUTCMonth(), now.getDate() + 1);
+
+  var duration  = die_date - now;
+  var years     = duration / 31556900000;
 
   var majorMinor = years.toFixed(9).toString().split('.');
 
