@@ -1,7 +1,7 @@
-Motivation
+Daily Motivation
 ========
 
-Your age.
+counts down to tomorrow to keep you motivated throughout your day.
 
 
 ![](screenshot.png)
