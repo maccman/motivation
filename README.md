@@ -27,8 +27,7 @@ should have something like this:
 
 ![file:///home/gcg/.motivation/dashboard.html](/inc/motivation.png)
 
-Notice the URL -- should start with `file:///` -- and [set it as your home page][set
-homepage].
+Notice the URL -- should start with `file:///` -- and [set it as your home page].
 
 That's it! Your new home page should be "Motivation" and the addon will make it
 your new-tab hompage automagically.
@@ -43,6 +42,6 @@ Thank you.
 [Pull Request]: https://github.com/maccman/motivation/pull/17
 [my fork]: https://github.com/gunar/motivation
 [zip file]: https://github.com/gunar/motivation/archive/master.zip
-[set homepage]: https://support.mozilla.org/en-US/kb/how-to-set-the-home-page
+[set it as your home page]: https://support.mozilla.org/en-US/kb/how-to-set-the-home-page
 
 
