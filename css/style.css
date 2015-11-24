@@ -16,6 +16,10 @@ html {
 }
 
 body {
+  align-items: center;
+  flex-direction: column;
+  font-smoothing: antialiased;
+  justify-content: center;
   -moz-osx-font-smoothing: grayscale;
   -webkit-align-items: center;
   -webkit-flex-direction: column;
@@ -24,6 +28,7 @@ body {
 }
 
 body, input {
+  display: flex;
   display: -webkit-flex;
   font-family: 'Avenir', 'helvetica neue', helvetica, arial, sans-serif;
 }
