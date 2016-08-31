@@ -28,8 +28,9 @@ App.fn.load = function(){
 };
 
 App.fn.save = function(){
-  if (this.dob)
+  if (this.dob) {
     localStorage.dob = this.dob.getTime();
+  }
 };
 
 App.fn.submit = function(e){
@@ -52,7 +53,7 @@ App.fn.renderAgeLoop = function(){
 };
 
 App.fn.renderAge = function(){
-  var now       = new Date
+  var now       = new Date;
   var duration  = now - this.dob;
   var years     = duration / 31556900000;
 
@@ -79,6 +80,6 @@ App.fn.view = function(name){
   return Handlebars.compile($el.innerHTML);
 };
 
-window.app = new App($('app'))
+window.app = new App($('app'));
 
 })();
