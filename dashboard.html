@@ -14,17 +14,25 @@
 
 <script id="dob-template" type="text/x-handlebars-template">
   <form>
-    <h1 id="dob" class="age-label">When were you born?</h1>
+    <h1 id="dobtitle" class="age-label">When were you born?</h1>
+    <input type="date" name="dob" id="dob">
+
+    Motivation should count...
+    <select id="age_method">
+      <option value="up">upward from birth</option>
+      <option value="down_male">downward from male actuarial life expectancy</option>
+      <option value="down_female">downward from female actuarial life expectancy</option>
+      <option value="down_100">downward from 100 years old</option>
+    </select>
 
     <footer>
-      <input type="date" name="dob" id="dob">
       <button type="submit">Motivate</button>
     </footer>
   <form>
 </script>
 
 <script id="age-template" type="text/x-handlebars-template">
-  <h1 class="age-label">AGE</h1>
+  <h1 class="age-label" id="age-time-label">UNSET</h1>
   <h2 class="count">{{year}}<sup>.{{milliseconds}}</sup></h2>
 </script>
 
