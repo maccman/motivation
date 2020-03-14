@@ -85,3 +85,14 @@ footer {
   -webkit-flex-direction: row;
   -webkit-justify-content: center;
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #494949;
+  }
+
+  .count {
+    color: #fff;
+  }
+}
+
