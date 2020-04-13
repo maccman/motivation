@@ -53,11 +53,19 @@ App.fn.renderAgeLoop = function(){
 
 App.fn.renderAge = function(){
   var now       = new Date
-  var duration  = now - this.dob;
+
+  // var duration  = now - this.dob;
+  // var age = now.getFullYear() - new Date(this.dob).getFullYear();
+
+  var die_date = new Date(this.dob)
+  die_date = die_date.setFullYear(die_date.getFullYear() + 100)
+
+  var duration  = die_date - now;
   var years     = duration / 31556900000;
+  // debugger;
 
   var majorMinor = years.toFixed(9).toString().split('.');
-
+// debugger;
   requestAnimationFrame(function(){
     this.html(this.view('age')({
       year:         majorMinor[0],
