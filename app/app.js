@@ -23,8 +23,10 @@ App.fn = App.prototype;
 App.fn.load = function(){
   var value;
 
-  if (value = localStorage.dob)
+  if (value = localStorage.dob) {
     this.dob = new Date(parseInt(value));
+    this.dob.setTime(this.dob.getTime() + 1000 * 60 * this.dob.getTimezoneOffset());
+  }
 };
 
 App.fn.save = function(){
@@ -40,6 +42,7 @@ App.fn.submit = function(e){
 
   this.dob = input.valueAsDate;
   this.save();
+  this.dob.setTime(this.dob.getTime() + 1000 * 60 * this.dob.getTimezoneOffset());
   this.renderAgeLoop();
 };
 
@@ -51,17 +54,35 @@ App.fn.renderAgeLoop = function(){
   this.interval = setInterval(this.renderAge.bind(this), 100);
 };
 
+App.fn.calculateAge = function(){
+  var now   = new Date
+  var age   = now.getFullYear() - this.dob.getFullYear();
+  var mDiff = now.getMonth() - this.dob.getMonth();
+
+  if (mDiff < 0 || (mDiff === 0 && now.getDate() < this.dob.getDate())) {
+    age--;
+  }
+
+  return age;
+};
+
+App.fn.calculateMS = function(){
+  var now            = new Date
+  var janOne         = new Date(now.getFullYear(), 0, 1);
+  var comingBirthday = new Date(this.dob.getTime());
+  var ms;
+
+  comingBirthday.setYear(now.getFullYear());
+  ms = (now.getTime() - janOne.getTime()) / (comingBirthday.getTime() - janOne.getTime());
+
+  return ms.toFixed(9).toString().split('.')[1];
+};
+
 App.fn.renderAge = function(){
-  var now       = new Date
-  var duration  = now - this.dob;
-  var years     = duration / 31556900000;
-
-  var majorMinor = years.toFixed(9).toString().split('.');
-
   requestAnimationFrame(function(){
     this.html(this.view('age')({
-      year:         majorMinor[0],
-      milliseconds: majorMinor[1]
+      year:         this.calculateAge(),
+      milliseconds: this.calculateMS()
     }));
   }.bind(this));
 };
