@@ -21,6 +21,7 @@ body {
   -webkit-flex-direction: column;
   -webkit-font-smoothing: antialiased;
   -webkit-justify-content: center;
+  user-select: none;
 }
 
 body, input {
